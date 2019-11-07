@@ -11,7 +11,7 @@ async def get_me(client):
     global ME
     ME = await client.get_me()
 
-asyncio.get_event_loop().create_task(get_me(borg))
+asyncio.get_event_loop().run_until_complete(get_me(borg))
 
 bwb = bwb.bwb(ME.id)
 wrap_users = {
