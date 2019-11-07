@@ -4,16 +4,9 @@ from telethon.events import NewMessage
 from bwb import bwb
 import asyncio
 
-global ME
-ME = None
+ME = borg.uid
 
-async def get_me(client):
-    global ME
-    ME = await client.get_me()
-
-asyncio.get_event_loop().run_until_complete(get_me(borg))
-
-bwb = bwb.bwb(ME.id)
+bwb = bwb.bwb(ME)
 wrap_users = {
     't': 79316791,   # Tanner
     'j': 172033414,  # Jason
